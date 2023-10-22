@@ -135,6 +135,56 @@ n_e_r
   * fasttext by Facebook
 
 
+#### Word2Vec by Google
 
 
+```
+import gensim.downloader as api
+
+# model = api.load('word2vec-google-news-300')
+
+model('apple')
+```
+
+```
+token_pairs = [('apple', 'orange'), ('cat', 'dog'), ('apple', 'dog')]
+
+for pair in token_pairs:
+  similarity = model.similarity(pair[0], pair[1])
+  print(fr'similarity of {pair} is: {similarity}') 
+```
+
+
+#### Global Vectors for Word Representation (GloVe) by Stanford
+
+```
+import torch
+import torchtext.vocab as vocab
+
+# glove = vocab.GloVe(name='6B', dim=50)  # for a bigger version set name='840B'
+```
+
+```
+token_pairs = [('apple', 'orange'), ('cat', 'dog'), ('apple', 'dog')]
+
+for pair in token_pairs: 
+  vec1, vec2 = glove[pair[0]], glove[pair[1]]
+  similarity = torch.dot(vec1, vec2) / (torch.norm(vec1) * torch.norm(vec2)) 
+  print(fr"similarity of {pair} is: {similarity}")
+```
+
+#### Fasttext
+
+
+```
+import gensim.downloader as api
+
+fasttext = api.load('fasttext-wiki-news-subwords-300')
+
+token_pairs = [('apple', 'orange'), ('cat', 'dog'), ('apple', 'dog')]
+
+for pair in token_pairs:
+  similarity = fasttext.similarity(pair[0], pair[1])
+  print(fr"similarity of {pair} is: {similarity}")
+```
 
