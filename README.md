@@ -173,7 +173,7 @@ for pair in token_pairs:
   print(fr"similarity of {pair} is: {similarity}")
 ```
 
-#### Fasttext
+#### Fasttext by Facebook (Meta)
 
 
 ```
