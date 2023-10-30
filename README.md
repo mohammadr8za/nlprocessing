@@ -115,7 +115,7 @@ n_e_r
   **NOTE:** CBOW is more efficient and lead to a better performance in samll datasets. 
 
 
-  * ***Skip-Gram:*** this algorithm is similar to CBOW, however, it works in the opposite way! In fact, Skip-Gram also selects a group of words, but, here we mask all words but one (the current word) and feed it to a shallow NN to reach the context vectors (representing neighbor words). This NN has on input layer of size V (one-hot inputs), one hidden layer of size E (Embedding size) and one output layer of size V (one-hot output). Therefore, input to the network is of size (1, V) and context vector is of shape (1, E). and repeat this for all the context words. In face each word passes the network k times (k equals 2*C). e.g., consider the sentence below: 
+  * ***Skip-Gram:*** this algorithm is similar to CBOW, however, it works in the opposite way! In fact, Skip-Gram also selects a group of words, but, here we mask all words but one (the current word) and feed it to a shallow NN to reach the context vectors (representing neighbor words). This NN has one input layer of size V (one-hot inputs), one hidden layer of size E (Embedding size) and one output layer of size V (one-hot output). Therefore, input to the network is of size (1, V) and the context vector is of shape (1, E). and feeding words to the NN repeats for each context words independently. In fact, each word passes the network k times (k (number of context words) equals 2*C (C is the window size)). e.g., consider the sentence below: 
   
   "the cold weather freezes this river each year"
 
