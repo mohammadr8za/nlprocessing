@@ -87,7 +87,7 @@ tagged_tokens
 ```
 
 
-*Named Entity Recognition:* to find if a token is (Name of a person, Location, Date, Time, ...)
+*Named Entity Recognition (NER):* to find if a token is (Name of a person, Location, Date, Time, ...)
 
 
 ```
